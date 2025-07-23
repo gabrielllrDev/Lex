@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lex The Rabbit Dog", "Assembly-CSharp-firstpass.csproj", "{4550D106-1746-0686-E7A0-7D3B47CE5921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lex The Rabbit Dog", "Assembly-CSharp.csproj", "{F20AB858-1E2F-6692-7E9E-E7623AAED222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lex The Rabbit Dog", "Assembly-CSharp-Editor-firstpass.csproj", "{CBC70815-83FC-AEAC-034D-DECEDF0678B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4550D106-1746-0686-E7A0-7D3B47CE5921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4550D106-1746-0686-E7A0-7D3B47CE5921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4550D106-1746-0686-E7A0-7D3B47CE5921}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4550D106-1746-0686-E7A0-7D3B47CE5921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20AB858-1E2F-6692-7E9E-E7623AAED222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20AB858-1E2F-6692-7E9E-E7623AAED222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20AB858-1E2F-6692-7E9E-E7623AAED222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20AB858-1E2F-6692-7E9E-E7623AAED222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC70815-83FC-AEAC-034D-DECEDF0678B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC70815-83FC-AEAC-034D-DECEDF0678B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC70815-83FC-AEAC-034D-DECEDF0678B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC70815-83FC-AEAC-034D-DECEDF0678B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
