@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F20AB858-1E2F-6692-7E9E-E7623AAED222}</ProjectGuid>
+    <ProjectGuid>{EF25D8A4-C26A-A612-4139-627D24802143}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\GenerateClouds.cs" />
      <Compile Include="Assets\Scripts\moveLex.cs" />
      <Compile Include="Assets\Scripts\rotateObj.cs" />
      <None Include="Assets\Plugins\QFSW\Retro FX Ultimate\readme.txt" />
@@ -75,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{4550D106-1746-0686-E7A0-7D3B47CE5921}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{A68F0250-8A0C-B2B1-3355-4557E51B8617}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
