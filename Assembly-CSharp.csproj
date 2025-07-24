@@ -46,6 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\ColisaoCamera.cs" />
+     <Compile Include="Assets\Scripts\Delay.cs" />
+     <Compile Include="Assets\Scripts\FollowPosition.cs" />
      <Compile Include="Assets\Scripts\GenerateClouds.cs" />
      <Compile Include="Assets\Scripts\moveLex.cs" />
      <Compile Include="Assets\Scripts\rotateObj.cs" />
