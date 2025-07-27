@@ -10,6 +10,13 @@ public class moveLex : MonoBehaviour {
 
 	public static bool Run;
 
+	void lancaLampada(){
+
+		lexBools.pegouLamp = false;
+		anim.SetBool ("Throw", false);
+
+	}
+
 	// Use this for initialization
 	void Start () {
 
@@ -23,9 +30,19 @@ public class moveLex : MonoBehaviour {
 		float InputX = Input.GetAxisRaw ("Horizontal");
 		float InputY = Input.GetAxisRaw ("Vertical");
 
+		if (lexBools.pegouLamp && Input.GetMouseButtonDown (0)) {
+
+			anim.SetBool ("Throw", true);
+			Invoke ("lancaLampada", 0.32f);
+
+			//Time.timeScale = 0.05f;
+
+		}
+
 		if (Input.GetKey(KeyCode.LeftControl)) {
 
 			anim.SetBool ("Stealth", Run);
+			lexBools.isStealth = true;
 
 		} 
 
@@ -33,6 +50,7 @@ public class moveLex : MonoBehaviour {
 
 			anim.SetBool ("Stealth", false);
 			anim.SetBool ("Run", Run);
+			lexBools.isStealth = false;
 
 		}
 			

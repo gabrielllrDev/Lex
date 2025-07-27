@@ -6,6 +6,9 @@ public class ColisaoCamera : MonoBehaviour {
 
 	public Transform target; //Objeto vazio, pai, que é responsável pelo controle de rotação da câmera
 	RaycastHit hit = new RaycastHit();
+
+	int layermask;
+
 	public float ajusteCamera; //Sensibilidade de ajuste da câmera ao colidir com algum obstáculo
 	public float distCam; //Distância da câmera ao target/boneco
 	//public Vector3 offset; //Ajuste da altura da câmera
@@ -20,6 +23,7 @@ public class ColisaoCamera : MonoBehaviour {
 		essaCamera = GetComponent<Camera> ();
 		informacoes = new Vector3 (60f, 0f, 2.3f);
 		//PlayerScript.Mira = 0;
+		layermask = ~(1 << LayerMask.NameToLayer ("Player"));
 		
 	}
 	
@@ -84,7 +88,7 @@ public class ColisaoCamera : MonoBehaviour {
 		//transform.position = target.position - transform.forward * distCam + transform.up * offset.y + transform.right * offset.x;
 
 
-		if (Physics.Linecast (target.position, transform.position, out hit)) {
+		if (Physics.Linecast (target.position, transform.position, out hit, layermask)) {
 
 			transform.position = hit.point + transform.forward * ajusteCamera;
 

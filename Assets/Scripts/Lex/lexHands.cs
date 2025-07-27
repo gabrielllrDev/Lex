@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPosition : MonoBehaviour {
+//Itens/Gadgets coletados pelo Lex
 
-	public Transform posicaoParaSeguir;
+public class lexHands : MonoBehaviour {
+
+	public GameObject lamp;
 
 	// Use this for initialization
 	void Start () {
+
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		lamp.SetActive (lexBools.pegouLamp);
 		
-	}
-
-	void LateUpdate(){
-
-		transform.position = posicaoParaSeguir.transform.position;
-
 	}
 }

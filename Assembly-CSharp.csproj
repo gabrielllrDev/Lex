@@ -49,9 +49,13 @@
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\ColisaoCamera.cs" />
      <Compile Include="Assets\Scripts\Delay.cs" />
-     <Compile Include="Assets\Scripts\FollowPosition.cs" />
      <Compile Include="Assets\Scripts\GenerateClouds.cs" />
-     <Compile Include="Assets\Scripts\moveLex.cs" />
+     <Compile Include="Assets\Scripts\Lex\lexBools.cs" />
+     <Compile Include="Assets\Scripts\Lex\lexHands.cs" />
+     <Compile Include="Assets\Scripts\Lex\moveLex.cs" />
+     <Compile Include="Assets\Scripts\followPosRot.cs" />
+     <Compile Include="Assets\Scripts\lampScript.cs" />
+     <Compile Include="Assets\Scripts\lifeLamp.cs" />
      <Compile Include="Assets\Scripts\rotateObj.cs" />
      <None Include="Assets\Plugins\QFSW\Retro FX Ultimate\readme.txt" />
      <None Include="Assets\Plugins\QFSW\Retro FX Ultimate\RetroFX.shader" />

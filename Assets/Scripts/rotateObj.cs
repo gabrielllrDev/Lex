@@ -26,6 +26,8 @@ public class rotateObj : MonoBehaviour {
 	void Update () {
 
 		//Debug.Log (lambda);
+		minHeigh = inicialHeigh - offsetConstant;
+		maxHeigh = inicialHeigh + offsetConstant;
 
 		transform.Rotate (0, 0, rotationSpeed * Time.deltaTime);
 
