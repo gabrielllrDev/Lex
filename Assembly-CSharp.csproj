@@ -54,8 +54,11 @@
      <Compile Include="Assets\Scripts\Lex\lexHands.cs" />
      <Compile Include="Assets\Scripts\Lex\moveLex.cs" />
      <Compile Include="Assets\Scripts\followPosRot.cs" />
+     <Compile Include="Assets\Scripts\genioControl.cs" />
+     <Compile Include="Assets\Scripts\genioScript.cs" />
      <Compile Include="Assets\Scripts\lampScript.cs" />
      <Compile Include="Assets\Scripts\lifeLamp.cs" />
+     <Compile Include="Assets\Scripts\moduloDelay.cs" />
      <Compile Include="Assets\Scripts\rotateObj.cs" />
      <None Include="Assets\Plugins\QFSW\Retro FX Ultimate\readme.txt" />
      <None Include="Assets\Plugins\QFSW\Retro FX Ultimate\RetroFX.shader" />

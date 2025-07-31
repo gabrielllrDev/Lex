@@ -6,13 +6,25 @@ public class moveLex : MonoBehaviour {
 
 	public Transform rotacaoCamera;
 
+	GameObject spawnGen;
+
 	Animator anim;
 
 	public static bool Run;
 
 	void lancaLampada(){
 
+		spawnGen = Instantiate (GetComponent<lexHands> ().lamp, GetComponent<lexHands> ().lamp.transform.position, GetComponent<lexHands> ().lamp.transform.rotation, null);
+		spawnGen.transform.localScale = new Vector3 (11.48698f, 11.48698f, 11.48698f);
 		lexBools.pegouLamp = false;
+
+		spawnGen.SetActive (true);
+		//spawnGen.transform.parent = null;
+		spawnGen.GetComponent<Rigidbody> ().isKinematic = false;
+		spawnGen.GetComponent<BoxCollider> ().enabled = true;
+
+		spawnGen.GetComponent<Rigidbody> ().AddForce (transform.forward * 20 + transform.up * 5, ForceMode.Impulse);
+
 		anim.SetBool ("Throw", false);
 
 	}
@@ -30,7 +42,7 @@ public class moveLex : MonoBehaviour {
 		float InputX = Input.GetAxisRaw ("Horizontal");
 		float InputY = Input.GetAxisRaw ("Vertical");
 
-		if (lexBools.pegouLamp && Input.GetMouseButtonDown (0)) {
+		if (lexBools.pegouLamp && Input.GetMouseButtonDown (0) && !lexBools.temGenio) {
 
 			anim.SetBool ("Throw", true);
 			Invoke ("lancaLampada", 0.32f);
@@ -42,7 +54,20 @@ public class moveLex : MonoBehaviour {
 		if (Input.GetKey(KeyCode.LeftControl)) {
 
 			anim.SetBool ("Stealth", Run);
-			lexBools.isStealth = true;
+
+			if (Run) {
+
+				anim.SetBool ("Run", !Run);
+				lexBools.isStealth = true;
+
+			} 
+
+			else {
+
+				anim.SetBool ("Run", Run);
+				lexBools.isStealth = false;
+			}
+				
 
 		} 
 

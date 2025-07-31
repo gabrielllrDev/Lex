@@ -24,6 +24,7 @@ public class ColisaoCamera : MonoBehaviour {
 		informacoes = new Vector3 (60f, 0f, 2.3f);
 		//PlayerScript.Mira = 0;
 		layermask = ~(1 << LayerMask.NameToLayer ("Player"));
+		distCam = 10;
 		
 	}
 	

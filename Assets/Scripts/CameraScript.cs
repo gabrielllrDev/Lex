@@ -31,6 +31,8 @@ public class CameraScript : MonoBehaviour {
 	float anguloX;
 	float anguloY;
 
+	bool comecouSeguir = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -50,7 +52,20 @@ public class CameraScript : MonoBehaviour {
 		if (moveLex.Run == true) {
 
 			//delay para seguir o jogador
-			Invoke("seguePlayer", 1f);
+
+			if (!comecouSeguir) {
+
+				Invoke("seguePlayer", 1f);
+
+			} 
+
+
+			else {
+
+				transform.position = Vector3.Lerp(transform.position, playerPos.position + offset, 5f * Time.deltaTime);
+
+			}
+
 			//Delay.construtorDelay (1f);
 
 
@@ -59,9 +74,12 @@ public class CameraScript : MonoBehaviour {
 
 		else {
 
+			CancelInvoke ("seguePlayer");
+			comecouSeguir = false;
+
 			if (transform.position != playerPos.position + offset) {
 
-				transform.position = Vector3.Lerp (transform.position, playerPos.position + offset, 0.05f);
+				transform.position = Vector3.Lerp (transform.position, playerPos.position + offset, 2f * Time.deltaTime);
 
 			} 
 
@@ -166,7 +184,8 @@ public class CameraScript : MonoBehaviour {
 
 	void seguePlayer(){
 
-		transform.position = Vector3.Lerp(transform.position, playerPos.position + offset, 0.25f);
+		comecouSeguir = true;
+		//transform.position = Vector3.Lerp(transform.position, playerPos.position + offset, 0.04f * Time.deltaTime);
 
 	}
 

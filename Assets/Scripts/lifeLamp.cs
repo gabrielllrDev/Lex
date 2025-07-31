@@ -23,16 +23,22 @@ public class lifeLamp : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerStay(Collider other){
 
 		if (other.gameObject.tag == "Player") {
 
-			rbLamp.isKinematic = false;
 			//rbLamp.AddForce (force, ForceMode.Impulse);
 
 			if (!lexBools.isStealth) {
 
 				rbLamp.AddTorque (force, ForceMode.Impulse);
+				rbLamp.isKinematic = false;
+
+			} 
+
+			else {
+
+				rbLamp.isKinematic = true;
 
 			}
 
