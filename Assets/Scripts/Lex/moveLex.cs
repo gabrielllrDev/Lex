@@ -51,90 +51,103 @@ public class moveLex : MonoBehaviour {
 
 		}
 
-		if (Input.GetKey(KeyCode.LeftControl)) {
-
-			anim.SetBool ("Stealth", Run);
-
-			if (Run) {
-
-				anim.SetBool ("Run", !Run);
-				lexBools.isStealth = true;
-
-			} 
-
-			else {
-
-				anim.SetBool ("Run", Run);
-				lexBools.isStealth = false;
-			}
-				
-
-		} 
-
-		else {
-
-			anim.SetBool ("Stealth", false);
-			anim.SetBool ("Run", Run);
-			lexBools.isStealth = false;
-
-		}
-			
-
 		if (InputX != 0 || InputY != 0) {
 
 			Run = true;
 
-		} 
-
-		else {
+		} else {
 
 			Run = false;
 
 		}
 
-		if (InputX > 0 && InputY == 0) {
-			
-			transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y + 90, 0), 5 * Time.deltaTime);
+		if (!lexBools.genioControl) {
 
-		}
+			if (Input.GetKey (KeyCode.LeftControl)) {
 
-		if (InputX < 0 && InputY == 0) {
+				anim.SetBool ("Stealth", Run);
 
-			transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y - 90, 0), 5 * Time.deltaTime);
+				if (Run) {
 
-		}
+					anim.SetBool ("Run", !Run);
+					lexBools.isStealth = true;
 
-		if (InputY > 0) {
+				} else {
 
-			transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y , 0), 5 * Time.deltaTime);
+					anim.SetBool ("Run", Run);
+					lexBools.isStealth = false;
+				}
 
-			if (InputX > 0) {
 
-				transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y + 45, 0), 5 * Time.deltaTime);
+			} else {
+
+				anim.SetBool ("Stealth", false);
+				anim.SetBool ("Run", Run);
+				lexBools.isStealth = false;
+
+			}
+				
+
+			if (InputX > 0 && InputY == 0) {
+
+				transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y + 90, 0), 5 * Time.deltaTime);
 
 			}
 
-			if (InputX < 0) {
+			if (InputX < 0 && InputY == 0) {
 
-				transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y - 45, 0), 5 * Time.deltaTime);
-
-			}
-
-		}
-
-		if (InputY < 0) {
-
-			transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y + 180, 0), 5 * Time.deltaTime);
-
-			if (InputX > 0) {
-
-				transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y - 225, 0), 5 * Time.deltaTime);
+				transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y - 90, 0), 5 * Time.deltaTime);
 
 			}
 
-			if (InputX < 0) {
+			if (InputY > 0) {
 
-				transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y  + 225, 0), 5 * Time.deltaTime);
+				transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y, 0), 5 * Time.deltaTime);
+
+				if (InputX > 0) {
+
+					transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y + 45, 0), 5 * Time.deltaTime);
+
+				}
+
+				if (InputX < 0) {
+
+					transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y - 45, 0), 5 * Time.deltaTime);
+
+				}
+
+			}
+
+			if (InputY < 0) {
+
+				transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y + 180, 0), 5 * Time.deltaTime);
+
+				if (InputX > 0) {
+
+					transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y - 225, 0), 5 * Time.deltaTime);
+
+				}
+
+				if (InputX < 0) {
+
+					transform.rotation = Quaternion.Slerp (this.transform.rotation, Quaternion.Euler (0, rotacaoCamera.transform.eulerAngles.y + 225, 0), 5 * Time.deltaTime);
+
+				}
+
+			}
+
+		} 
+
+
+		else {
+
+			foreach (AnimatorControllerParameter param in anim.parameters) {
+
+				if (param.type == AnimatorControllerParameterType.Bool) {
+
+					anim.SetBool (param.name, false);
+
+				}
 
 			}
 

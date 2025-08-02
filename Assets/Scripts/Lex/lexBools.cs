@@ -10,6 +10,8 @@ public class lexBools : MonoBehaviour {
 	public static bool isStealth;
 	public static bool temGenio;
 
+	public static bool genioControl;
+
 	// Use this for initialization
 	void Start () {
 

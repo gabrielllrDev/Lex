@@ -16,7 +16,19 @@ public class rotateObj : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		inicialHeigh = transform.position.y;
+		if (this.gameObject.tag == "Genio") {
+
+			inicialHeigh = transform.localPosition.y;
+
+		} 
+
+
+		else {
+
+			inicialHeigh = transform.position.y;
+
+		}
+
 		minHeigh = inicialHeigh - offsetConstant;
 		maxHeigh = inicialHeigh + offsetConstant;
 		lambda = 0.5f;
@@ -60,7 +72,18 @@ public class rotateObj : MonoBehaviour {
 
 		}
 
-		transform.position = new Vector3 (transform.position.x, xLambda, transform.position.z);
+		if (this.gameObject.tag == "Genio") {
+
+			transform.localPosition = new Vector3 (transform.localPosition.x, xLambda, transform.localPosition.z);
+
+		} 
+
+
+		else {
+
+			transform.position = new Vector3 (transform.position.x, xLambda, transform.position.z);
+
+		}
 		
 	}
 }

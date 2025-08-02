@@ -20,8 +20,10 @@ public class CameraScript : MonoBehaviour {
 
 	public float RotationSpeed = 500f; //Velocidade de rotação
 	public Transform playerPos; //Posição do player
+	public static Transform genioPos; //Posição do genio
 
 	public Vector3 offset; //Ajusta a posição da câmera no eixo y
+	public Vector3 offsetGenio;
 
 	//Valores máximos e mínimos para o ângulo de rotação ao olhar para cima/baixo
 	public float minY = -50;
@@ -33,6 +35,41 @@ public class CameraScript : MonoBehaviour {
 
 	bool comecouSeguir = false;
 
+	void cameraFollow(Transform playerTransform, Vector3 offset){
+
+		if (moveLex.Run == true) {
+
+			//delay para seguir o jogador
+
+			if (!comecouSeguir) {
+
+				Invoke ("seguePlayer", 1f);
+
+			} else {
+
+				transform.position = Vector3.Lerp (transform.position, playerTransform.position + offset, 5f * Time.deltaTime);
+
+			}
+
+			//Delay.construtorDelay (1f);
+
+
+
+		} else {
+
+			CancelInvoke ("seguePlayer");
+			comecouSeguir = false;
+
+			if (transform.position != playerTransform.position + offset) {
+
+				transform.position = Vector3.Lerp (transform.position, playerTransform.position + offset, 2f * Time.deltaTime);
+
+			} 
+
+
+		}
+
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -49,42 +86,19 @@ public class CameraScript : MonoBehaviour {
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 
-		if (moveLex.Run == true) {
+		if (!lexBools.genioControl) {
 
-			//delay para seguir o jogador
-
-			if (!comecouSeguir) {
-
-				Invoke("seguePlayer", 1f);
-
-			} 
-
-
-			else {
-
-				transform.position = Vector3.Lerp(transform.position, playerPos.position + offset, 5f * Time.deltaTime);
-
-			}
-
-			//Delay.construtorDelay (1f);
-
-
+			cameraFollow (playerPos, offset);
 
 		} 
 
 		else {
 
-			CancelInvoke ("seguePlayer");
-			comecouSeguir = false;
-
-			if (transform.position != playerPos.position + offset) {
-
-				transform.position = Vector3.Lerp (transform.position, playerPos.position + offset, 2f * Time.deltaTime);
-
-			} 
+			cameraFollow (genioPos, offsetGenio);
 
 
 		}
+			
 
 	}
 
